@@ -312,15 +312,15 @@ footer img{height:28px;width:28px;border-radius:7px}
         <div class="gm" id="gm-wrap">
           <div class="gm-title">รูปแบบการจ่าย</div>
           <div class="grid2" role="radiogroup" aria-label="รูปแบบการจ่าย">
-            <label class="opt sm" id="opt-gp">
-              <span><span class="t">จ่ายตามยอด</span><span class="p" id="p-gp">10% ของยอดออนไลน์ สูงสุด ฿3,340</span>
-                <span class="d">Payment 1.65%+ / บิล</span></span>
-              <input type="radio" name="gm" value="gp" checked><span class="box"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            </label>
             <label class="opt sm">
-              <span><span class="t">จ่ายคงที่</span><span class="p" id="p-fixed">฿3,340 / เดือน</span>
+              <span><span class="t">จ่ายแบบปกติ <span class="chip blue">Fixed monthly</span></span><span class="p" id="p-fixed">฿3,340 / เดือน</span>
                 <span class="d">Payment 0.35%+ / บิล</span></span>
-              <input type="radio" name="gm" value="fixed"><span class="box"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <input type="radio" name="gm" value="fixed" checked><span class="box"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </label>
+            <label class="opt sm" id="opt-gp">
+              <span><span class="t">จ่ายตามยอด (GP)</span><span class="p" id="p-gp">10% ของยอดออนไลน์ สูงสุด ฿3,340</span>
+                <span class="d">Payment 1.65%+ / บิล</span></span>
+              <input type="radio" name="gm" value="gp"><span class="box"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </label>
           </div>
           <p class="gm-note" id="gm-note"></p>
@@ -434,10 +434,10 @@ footer img{height:28px;width:28px;border-radius:7px}
         <thead><tr><th></th><th>Entry</th><th class="col">Growth</th><th>Pro</th></tr></thead>
         <tbody>
           <tr><td>ราคา</td><td>990</td><td class="col">2,350</td><td>4,320</td></tr>
-          <tr><td>รูปแบบการจ่าย<small>จ่ายตามยอด = 10% ของยอดออนไลน์ ไม่เกินราคาแพ็กเกจ</small></td><td>คงที่ หรือ ตามยอด</td><td class="col">คงที่ หรือ ตามยอด</td><td>คงที่ หรือ ตามยอด</td></tr>
+          <tr><td>รูปแบบการจ่าย<small>ตามยอด (GP) = 10% ของยอดออนไลน์ ไม่เกินราคาแพ็กเกจ</small></td><td>แบบปกติ หรือ ตามยอด (GP)</td><td class="col">แบบปกติ หรือ ตามยอด (GP)</td><td>แบบปกติ หรือ ตามยอด (GP)</td></tr>
           <tr class="g"><td colspan="4">สาขาและการสั่งอาหาร</td></tr>
           <tr><td>สาขาที่รวม</td><td>1</td><td class="col">2</td><td>4</td></tr>
-          <tr><td>เพิ่มสาขา</td><td>ไม่รองรับ</td><td class="col">+990</td><td>+990</td></tr>
+          <tr><td>เพิ่มสาขา</td><td>ไม่รองรับ</td><td class="col">+990 / สาขา</td><td>+990 / สาขา</td></tr>
           <tr><td>สั่งอาหาร: รับเอง เดลิเวอรี ทานที่ร้าน</td><td class="y"></td><td class="y col"></td><td class="y"></td></tr>
           <tr><td>จำนวนออเดอร์</td><td>ไม่จำกัด</td><td class="col">ไม่จำกัด</td><td>ไม่จำกัด</td></tr>
           <tr><td>เดลิเวอรี</td><td>ผู้ให้บริการ 1 ราย</td><td class="col">Orchestrator</td><td>Orchestrator + ไรเดอร์ร้าน</td></tr>
@@ -450,7 +450,7 @@ footer img{height:28px;width:28px;border-radius:7px}
           <tr><td>Meri PoS</td><td>250 / สาขา</td><td class="col">250 / สาขา</td><td>250 / สาขา</td></tr>
           <tr><td>Stock สต็อก</td><td>300 / สาขา</td><td class="col">300 / สาขา</td><td>300 / สาขา</td></tr>
           <tr><td>Crew มือถือพนักงาน</td><td>500 / สาขา</td><td class="col">500 / สาขา</td><td>500 / สาขา</td></tr>
-          <tr><td>Payment<small>ขึ้นกับรูปแบบการจ่ายแพ็กเกจ</small></td><td>0.35%+ จ่ายคงที่<br>1.65%+ จ่ายตามยอด</td><td class="col">0.35%+ จ่ายคงที่<br>1.65%+ จ่ายตามยอด</td><td>0.35%+ จ่ายคงที่<br>1.65%+ จ่ายตามยอด</td></tr>
+          <tr><td>Payment<small>ขึ้นกับรูปแบบการจ่ายแพ็กเกจ</small></td><td>แบบปกติ: 0.35%+ / บิล<br>ตามยอด (GP): 1.65%+ / บิล</td><td class="col">แบบปกติ: 0.35%+ / บิล<br>ตามยอด (GP): 1.65%+ / บิล</td><td>แบบปกติ: 0.35%+ / บิล<br>ตามยอด (GP): 1.65%+ / บิล</td></tr>
           <tr><td>ใช้ Payment ของร้านเอง (BYO)</td><td class="n"></td><td class="n col"></td><td class="y"></td></tr>
           <tr class="g"><td colspan="4">แบรนด์</td></tr>
           <tr><td>Branded App</td><td>+1,490</td><td class="col">+1,490</td><td>รวม</td></tr>
@@ -508,8 +508,8 @@ footer img{height:28px;width:28px;border-radius:7px}
       <div class="cond"><h3>Branded App</h3><p>ค่าติดตั้ง 25,000 บาทสำหรับ Entry และ Growth ร้านชำระค่าบัญชีนักพัฒนา Apple และ Google เอง ใช้ดีไซน์มาตรฐานปรับตามแบรนด์ ฟีเจอร์พิเศษเสนอราคาแยก</p></div>
       <div class="cond"><h3>อัปเกรดเป็น Pro</h3><p>แอปย้ายตามไปทั้งหมด ไม่เสียค่าติดตั้งใหม่ และไม่มีค่าแอปรายเดือนอีก</p></div>
       <div class="cond"><h3>รายปีลด 10%</h3><p>ลดจากค่าบริการรายเดือนทั้งหมด ไม่รวมค่าติดตั้งแอปและค่าธรรมเนียม Payment</p></div>
-      <div class="cond"><h3>จ่ายตามยอด ทุกแพ็กเกจ</h3><p>เลือกจ่าย 10% ของยอดออเดอร์ออนไลน์ สูงสุดไม่เกินราคาแพ็กเกจตามจำนวนสาขา หรือจ่ายคงที่รายเดือน ใช้ได้ทั้ง Entry, Growth และ Pro ยังไม่มีวันสิ้นสุด หากมีการเปลี่ยนแปลง บริษัทจะแจ้งล่วงหน้าอย่างน้อย 60 วัน</p></div>
-      <div class="cond"><h3>ค่าธรรมเนียม Payment</h3><p>ทุกแพ็กเกจ: จ่ายคงที่ได้เรท 0.35%+ ต่อบิล จ่ายตามยอด (GP + เพดานสูงสุด) เรท 1.65%+ ต่อบิล แบบรายปีใช้ได้กับการจ่ายคงที่เท่านั้น</p></div>
+      <div class="cond"><h3>จ่ายตามยอด ทุกแพ็กเกจ</h3><p>เลือกจ่าย 10% ของยอดออเดอร์ออนไลน์ สูงสุดไม่เกินราคาแพ็กเกจตามจำนวนสาขา หรือจ่ายแบบปกติ (Fixed monthly) ใช้ได้ทั้ง Entry, Growth และ Pro ยังไม่มีวันสิ้นสุด หากมีการเปลี่ยนแปลง บริษัทจะแจ้งล่วงหน้าอย่างน้อย 60 วัน</p></div>
+      <div class="cond"><h3>ค่าธรรมเนียม Payment</h3><p>ทุกแพ็กเกจ: จ่ายแบบปกติได้เรท 0.35%+ / บิล จ่ายตามยอด (GP + เพดานสูงสุด) เรท 1.65%+ / บิล แบบรายปีใช้ได้กับการจ่ายแบบปกติเท่านั้น</p></div>
     </div>
   </div>
 </section>
@@ -634,7 +634,7 @@ footer img{height:28px;width:28px;border-radius:7px}
     var gcap=planBase(p,n);
     $('p-gp').textContent='10% ของยอดออนไลน์ สูงสุด '+fmt(gcap);
     $('p-fixed').textContent=fmt(gcap)+' / เดือน';
-    $('gm-note').textContent=st.bill==='y'?'แบบรายปีใช้ได้กับการจ่ายคงที่เท่านั้น':'จ่ายตามยอดคุ้มเมื่อยอดออนไลน์ต่ำกว่า '+fmt(gcap*10)+'/เดือน';
+    $('gm-note').textContent=st.bill==='y'?'แบบรายปีใช้ได้กับการจ่ายแบบปกติเท่านั้น':'จ่ายตามยอด (GP) คุ้มเมื่อยอดออนไลน์ต่ำกว่า '+fmt(gcap*10)+'/เดือน';
     var gpNow=gpOn();
 
     var hasPos=pos();
