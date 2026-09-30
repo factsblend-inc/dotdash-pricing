@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>dotdash — ราคา</title>
+<title>dotdash | ราคา</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -168,7 +168,7 @@ th:first-child,td:first-child{text-align:left;width:30%}
 td:first-child{color:var(--ink)}
 td:first-child small{display:block;color:var(--muted);font-size:13px}
 td.y::after{content:"";display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--green);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12'/%3E%3C/svg%3E");}
-td.n::after{content:"—";color:var(--muted)}
+td.n::after{content:"";display:inline-block;width:14px;height:14px;border-radius:50%;border:1.5px solid var(--muted);opacity:.5;vertical-align:middle}
 tr.g td{background:var(--soft);font-weight:700;font-size:15px;padding:10px 18px}
 .col{background:var(--blue-soft)}
 tr.g td.col{background:var(--soft)}
@@ -279,8 +279,8 @@ footer img{height:28px;width:28px;border-radius:7px}
 <div class="wrap">
   <div class="hero">
     <h1>ราคา</h1>
-    <p>ระบบสั่งอาหาร CRM และ PoS สำหรับร้านอาหาร เลือกเฉพาะที่ร้านต้องการ ราคาคำนวณให้ทันที</p>
-    <div class="rule">ทุกสาขา 990 บาท · เปิดสาขาเพิ่มจ่ายเท่ากันทุกสาขา</div>
+    <p>Designed for every stage of your journey.</p>
+    <div class="rule">Build your own ecosystem, your way, at your price.</div>
   </div>
 
   <div class="config">
@@ -380,10 +380,6 @@ footer img{height:28px;width:28px;border-radius:7px}
           <label class="opt" data-needs="pos">
             <span><span class="t">Crew มือถือพนักงาน</span><span class="p">500 บาท/เดือน/สาขา</span></span>
             <input type="checkbox" id="i-crew"><span class="box"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </label>
-          <label class="opt" data-needs="pos">
-            <span><span class="t">Payment</span><span class="p" id="p-pay">0.35%+ / บิล</span></span>
-            <input type="checkbox" id="i-pay"><span class="box"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </label>
         </div>
       </section>
@@ -488,9 +484,9 @@ footer img{height:28px;width:28px;border-radius:7px}
           <tr><td>บรอดแคสต์ตามกลุ่ม RFM / Custom</td><td class="n"></td><td class="y col"></td></tr>
           <tr><td>รายงานวิเคราะห์ · ROI</td><td class="y"></td><td class="y col"></td></tr>
           <tr><td>รายงานเฉพาะร้าน · ทีมแนะนำ Automation</td><td class="n"></td><td class="y col"></td></tr>
-          <tr><td>ที่นั่งทีมการตลาด</td><td>—</td><td class="col">2 · +290 / ที่นั่ง</td></tr>
+          <tr><td>ที่นั่งทีมการตลาด</td><td class="n"></td><td class="col">2 · +290 / ที่นั่ง</td></tr>
           <tr><td>ที่นั่งดูรายงานอย่างเดียว</td><td>ไม่จำกัด</td><td class="col">ไม่จำกัด</td></tr>
-          <tr><td>AI Credit / เดือน</td><td>—</td><td class="col">1,000 · +290 / 1,000</td></tr>
+          <tr><td>AI Credit / เดือน</td><td class="n"></td><td class="col">1,000 · +290 / 1,000</td></tr>
         </tbody>
       </table>
     </div>
@@ -602,7 +598,6 @@ footer img{height:28px;width:28px;border-radius:7px}
     if(o.pos){var pp=p==='crm'?500:250;items.push({n:'x'+n+' Meri PoS',s:p==='crm'?'':'ราคาคู่แพ็กเกจ (ปกติ 500)',v:pp*n});
       if(o.stock) items.push({n:'x'+n+' Stock',v:300*n});
       if(o.crew) items.push({n:'x'+n+' Crew',v:500*n});
-      if(o.pay) items.push({n:'Payment',s:(gp?'1.65%+':'0.35%+')+' ต่อบิล ตามยอดจริง',v:0,txt:'ตามยอด'});
     }
     if(o.app && p!=='crm'){
       if(p==='pro') items.push({n:'Branded App',v:0,txt:'รวมใน Pro'});
@@ -614,7 +609,7 @@ footer img{height:28px;width:28px;border-radius:7px}
   }
   function opts(){
     return {n:st.branches,adv:$('i-adv').checked,seats:st.seats,packs:st.packs,pos:pos(),
-      stock:$('i-stock').checked,crew:$('i-crew').checked,pay:$('i-pay').checked,app:$('i-app').checked,bill:st.bill,gp:gpOn()};
+      stock:$('i-stock').checked,crew:$('i-crew').checked,app:$('i-app').checked,bill:st.bill,gp:gpOn()};
   }
 
   function render(){
@@ -641,7 +636,7 @@ footer img{height:28px;width:28px;border-radius:7px}
     $('p-fixed').textContent=fmt(gcap)+' / เดือน';
     $('gm-note').textContent=st.bill==='y'?'แบบรายปีใช้ได้กับการจ่ายคงที่เท่านั้น':'จ่ายตามยอดคุ้มเมื่อยอดออนไลน์ต่ำกว่า '+fmt(gcap*10)+'/เดือน';
     var gpNow=gpOn();
-    $('p-pay').textContent=(gpNow?'1.65%+':'0.35%+')+' / บิล';
+
     var hasPos=pos();
     document.querySelectorAll('[data-needs=pos]').forEach(function(l){
       l.classList.toggle('disabled',!hasPos); var i=l.querySelector('input'); i.disabled=!hasPos; if(!hasPos) i.checked=false;
