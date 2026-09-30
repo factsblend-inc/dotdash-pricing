@@ -660,7 +660,7 @@ footer img{height:28px;width:28px;border-radius:7px}
     if(o.gp){
       var cap=planBase(p,n), fixed=r.monthly-cap, exG=Math.round(cap*5/100)*100, exPay=fixed+exG*0.1;
       gpb.hidden=false;
-      $('r-label').textContent='จ่ายคงที่';
+      $('r-label').textContent='จ่ายรายเดือน';
       $('r-total').textContent=fmt(fixed);
       gpb.innerHTML='<div class="gr"><span>+ 10% ของยอดออนไลน์</span><b>สูงสุด '+fmt(cap)+'</b></div>'+
         '<div class="gr fx"><span>รวมสูงสุด</span><b>'+fmt(r.monthly)+'/เดือน</b></div>'+
@@ -671,7 +671,7 @@ footer img{height:28px;width:28px;border-radius:7px}
     $('r-setup').textContent=fmt(r.setup);
     $('r-per').textContent=(o.gp?'สูงสุด ':'')+fmt(r.monthly/n)+'/เดือน';
 
-    $('mb-l').textContent=o.gp?'จ่ายคงที่ + 10% ของยอด':'รวม';
+    $('mb-l').textContent=o.gp?'จ่ายรายเดือน + 10% ของยอด':'รวม';
     $('mb-v').textContent=$('r-total').textContent;
     $('mb-s').textContent=o.gp?'/เดือน · สูงสุด '+fmt(r.monthly):'/เดือน';
     // cheaper ordering plan tip
