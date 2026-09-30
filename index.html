@@ -171,6 +171,10 @@ td.y::after{content:"";display:inline-block;width:18px;height:18px;border-radius
 td.n::after{content:"";display:inline-block;width:14px;height:14px;border-radius:50%;border:1.5px solid var(--muted);opacity:.5;vertical-align:middle}
 tr.g td{background:var(--soft);font-weight:700;font-size:15px;padding:10px 18px}
 .col{background:var(--blue-soft)}
+td.prov{text-align:center}
+.pv{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--hair);border-radius:999px;padding:4px 12px;margin:3px 4px;font-size:14px;color:var(--muted)}
+.pv.on{border-color:var(--line);color:var(--ink);font-weight:600}
+.pv em{font-style:normal;font-size:12px;background:var(--soft);border-radius:999px;padding:0 7px}
 tr.g td.col{background:var(--soft)}
 
 .conds{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
@@ -299,7 +303,7 @@ footer img{height:28px;width:28px;border-radius:7px}
           <label class="opt" data-plan="growth">
             <span><span class="dotrow" aria-hidden="true"><i></i><i></i><i class="o"></i></span>
               <span class="t">Growth <span class="chip">หลายสาขา</span></span><span class="p">2,350 บาท/เดือน · +990/สาขา</span>
-              <span class="d">2 สาขา · รวมข้อมูลทุกสาขา · Delivery Orchestrator</span></span>
+              <span class="d">2 สาขา · รวมข้อมูลทุกสาขา · Multiple Delivery Provider</span></span>
             <input type="radio" name="plan" value="growth"><span class="box"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </label>
           <label class="opt" data-plan="pro">
@@ -312,15 +316,15 @@ footer img{height:28px;width:28px;border-radius:7px}
         <div class="gm" id="gm-wrap">
           <div class="gm-title">รูปแบบการจ่าย</div>
           <div class="grid2" role="radiogroup" aria-label="รูปแบบการจ่าย">
-            <label class="opt sm">
-              <span><span class="t">จ่ายแบบปกติ <span class="chip blue">Fixed monthly</span></span><span class="p" id="p-fixed">฿3,340 / เดือน</span>
-                <span class="d">Payment 0.35%+ / บิล</span></span>
-              <input type="radio" name="gm" value="fixed" checked><span class="box"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            </label>
             <label class="opt sm" id="opt-gp">
               <span><span class="t">จ่ายตามยอด (GP)</span><span class="p" id="p-gp">10% ของยอดออนไลน์ สูงสุด ฿3,340</span>
                 <span class="d">Payment 1.65%+ / บิล</span></span>
-              <input type="radio" name="gm" value="gp"><span class="box"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <input type="radio" name="gm" value="gp" checked><span class="box"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </label>
+            <label class="opt sm">
+              <span><span class="t">จ่ายแบบปกติ <span class="chip blue">Fixed monthly</span></span><span class="p" id="p-fixed">฿3,340 / เดือน</span>
+                <span class="d">Payment 0.35%+ / บิล</span></span>
+              <input type="radio" name="gm" value="fixed"><span class="box"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </label>
           </div>
           <p class="gm-note" id="gm-note"></p>
@@ -434,13 +438,14 @@ footer img{height:28px;width:28px;border-radius:7px}
         <thead><tr><th></th><th>Entry</th><th class="col">Growth</th><th>Pro</th></tr></thead>
         <tbody>
           <tr><td>ราคา</td><td>990</td><td class="col">2,350</td><td>4,320</td></tr>
-          <tr><td>รูปแบบการจ่าย<small>ตามยอด (GP) = 10% ของยอดออนไลน์ ไม่เกินราคาแพ็กเกจ</small></td><td>แบบปกติ หรือ ตามยอด (GP)</td><td class="col">แบบปกติ หรือ ตามยอด (GP)</td><td>แบบปกติ หรือ ตามยอด (GP)</td></tr>
+          <tr><td>รูปแบบการจ่าย<small>ตามยอด (GP) = 10% ของยอดออนไลน์ ไม่เกินราคาแพ็กเกจ</small></td><td>ตามยอด (GP) หรือ แบบปกติ</td><td class="col">ตามยอด (GP) หรือ แบบปกติ</td><td>ตามยอด (GP) หรือ แบบปกติ</td></tr>
           <tr class="g"><td colspan="4">สาขาและการสั่งอาหาร</td></tr>
           <tr><td>สาขาที่รวม</td><td>1</td><td class="col">2</td><td>4</td></tr>
           <tr><td>เพิ่มสาขา</td><td>ไม่รองรับ</td><td class="col">+990 / สาขา</td><td>+990 / สาขา</td></tr>
           <tr><td>สั่งอาหาร: รับเอง เดลิเวอรี ทานที่ร้าน</td><td class="y"></td><td class="y col"></td><td class="y"></td></tr>
           <tr><td>จำนวนออเดอร์</td><td>ไม่จำกัด</td><td class="col">ไม่จำกัด</td><td>ไม่จำกัด</td></tr>
-          <tr><td>เดลิเวอรี</td><td>ผู้ให้บริการ 1 ราย</td><td class="col">Orchestrator</td><td>Orchestrator + ไรเดอร์ร้าน</td></tr>
+          <tr><td>เดลิเวอรี<small>เลือกผู้ให้บริการที่เร็วและคุ้มที่สุดให้อัตโนมัติ</small></td><td>ผู้ให้บริการ 1 ราย</td><td class="col">Multiple Delivery Provider</td><td>Multiple Delivery Provider + Own Fleet</td></tr>
+          <tr><td>ผู้ให้บริการเดลิเวอรี<small>ใช้ได้กับ Multiple Delivery Provider</small></td><td colspan="3" class="prov"><span class="pv on">Lalamove</span><span class="pv">GrabExpress <em>เร็วๆ นี้</em></span><span class="pv">Skootar <em>เร็วๆ นี้</em></span></td></tr>
           <tr><td>จัดการข้ามสาขา<small>เมนู แต้ม ลูกค้า รายงาน รวมทุกสาขา</small></td><td class="n"></td><td class="y col"></td><td class="y"></td></tr>
           <tr class="g"><td colspan="4">CRM</td></tr>
           <tr><td>Basic CRM</td><td class="y"></td><td class="y col"></td><td class="y"></td></tr>
@@ -450,7 +455,7 @@ footer img{height:28px;width:28px;border-radius:7px}
           <tr><td>Meri PoS</td><td>250 / สาขา</td><td class="col">250 / สาขา</td><td>250 / สาขา</td></tr>
           <tr><td>Stock สต็อก</td><td>300 / สาขา</td><td class="col">300 / สาขา</td><td>300 / สาขา</td></tr>
           <tr><td>Crew มือถือพนักงาน</td><td>500 / สาขา</td><td class="col">500 / สาขา</td><td>500 / สาขา</td></tr>
-          <tr><td>Payment<small>ขึ้นกับรูปแบบการจ่ายแพ็กเกจ</small></td><td>แบบปกติ: 0.35%+ / บิล<br>ตามยอด (GP): 1.65%+ / บิล</td><td class="col">แบบปกติ: 0.35%+ / บิล<br>ตามยอด (GP): 1.65%+ / บิล</td><td>แบบปกติ: 0.35%+ / บิล<br>ตามยอด (GP): 1.65%+ / บิล</td></tr>
+          <tr><td>Payment<small>ขึ้นกับรูปแบบการจ่ายแพ็กเกจ</small></td><td>ตามยอด (GP): 1.65%+ / บิล<br>แบบปกติ: 0.35%+ / บิล</td><td class="col">ตามยอด (GP): 1.65%+ / บิล<br>แบบปกติ: 0.35%+ / บิล</td><td>ตามยอด (GP): 1.65%+ / บิล<br>แบบปกติ: 0.35%+ / บิล</td></tr>
           <tr><td>ใช้ Payment ของร้านเอง (BYO)</td><td class="n"></td><td class="n col"></td><td class="y"></td></tr>
           <tr class="g"><td colspan="4">แบรนด์</td></tr>
           <tr><td>Branded App</td><td>+1,490</td><td class="col">+1,490</td><td>รวม</td></tr>
@@ -500,6 +505,7 @@ footer img{height:28px;width:28px;border-radius:7px}
     <div class="conds">
       <div class="cond"><h3>Entry มี 1 สาขา</h3><p>เพิ่มสาขาไม่ได้ ถ้าเปิดสาขาที่ 2 อัปเกรดเป็น Growth ได้ทันที 1 นิติบุคคลหรือเลขผู้เสียภาษีใช้ Entry ได้ 1 บัญชี</p></div>
       <div class="cond"><h3>สาขาเพิ่ม 990 บาท</h3><p>ทุกแพ็กเกจที่มีหลายสาขา สาขาถัดไปราคาเท่ากัน ทุกสาขาในบัญชีใช้เมนู แต้ม และข้อมูลลูกค้าร่วมกัน</p></div>
+      <div class="cond"><h3>Multiple Delivery Provider</h3><p>Growth และ Pro เชื่อมผู้ให้บริการเดลิเวอรีหลายราย ระบบเลือกรายที่เร็วและคุ้มที่สุดให้แต่ละออเดอร์ ตอนนี้รองรับ Lalamove และกำลังจะเพิ่ม GrabExpress และ Skootar เร็วๆ นี้</p></div>
       <div class="cond"><h3>ใช้ PoS เดิมได้</h3><p>ไม่ต้องเปลี่ยนระบบหน้าร้าน ออเดอร์ออนไลน์เข้า PoS ที่ร้านใช้อยู่ ไม่มีค่าบริการเชื่อมต่อเพิ่มเติม สำหรับ PoS ที่รองรับ</p></div>
       <div class="cond"><h3>Meri PoS ราคาพิเศษเมื่อใช้คู่แพ็กเกจ</h3><p>ราคาปกติ 500 บาท/สาขา ลดเหลือ 250 บาท/สาขา เมื่อใช้กับ Entry, Growth หรือ Pro</p></div>
       <div class="cond"><h3>สมาชิกไม่จำกัด</h3><p>ลูกค้าที่เคยสมัครกับร้านใดก็ได้ใน dotdash สมัครร้านคุณได้ในคลิกเดียว ภายใต้นโยบายการใช้งานที่เหมาะสม</p></div>
